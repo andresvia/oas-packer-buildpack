@@ -1,5 +1,6 @@
-publish: docker:
-  repo: registry.192.168.12.212.xip.io:5000/oas/packer-buildpack
-  tag: latest
-  file: Dockerfile
-  insecure: true
+publish:
+  docker:
+    repo: registry.192.168.12.212.xip.io:5000/oas/packer-buildpack
+    tag: latest
+    file: Dockerfile
+    insecure: true
