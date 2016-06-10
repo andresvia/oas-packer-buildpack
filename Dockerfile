@@ -6,12 +6,12 @@ WORKDIR /tmp
 RUN yum update -y && yum install -y wget unzip && yum clean all
 RUN wget -q $PACKER_DOWNLOAD_URL -Opacker.zip
 RUN wget -q $JQ_DOWNLOAD_URL $AWS_DOWNLOAD_URL
-RUN unzip packer.zip
-RUN mv packer /usr/local/bin
-RUN rm packer.zip
-RUN chmod +x jq-linux64
-RUN mv jq-linux64 /usr/local/bin/jq
-RUN unzip awscli-bundle.zip
-RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-RUN rm -r awscli-bundle/ awscli-bundle.zip
+RUN unzip packer.zip && \
+mv packer /usr/local/bin && \
+rm packer.zip && \
+chmod +x jq-linux64 && \
+mv jq-linux64 /usr/local/bin/jq && \
+unzip awscli-bundle.zip && \
+./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws && \
+rm -r awscli-bundle/ awscli-bundle.zip
 WORKDIR /
