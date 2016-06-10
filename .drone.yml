@@ -1,6 +1,7 @@
 publish:
   docker:
-    repo: http://registry.192.168.12.212.xip.io:5000/oas/packer-buildpack
+    registry: registry.192.168.12.212.xip.io:5000
+    repo: oas/packer-buildpack
     tag:
     - latest
     - $$BRANCH-$$COMMIT-$$BUILD_NUMBER
