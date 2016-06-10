@@ -1,6 +1,6 @@
 publish:
   docker:
-    registry: registry.192.168.12.212.xip.io:5000
+    registry: ci.192.168.12.212.xip.io:5000
     repo: oas/packer-buildpack
     tag:
     - latest
