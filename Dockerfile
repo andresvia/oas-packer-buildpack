@@ -5,3 +5,4 @@ ADD $PACKER_DOWNLOAD_URL packer.zip
 RUN unzip packer.zip
 RUN rm packer.zip
 WORKDIR /
+RUN apk add --no-cache bash
