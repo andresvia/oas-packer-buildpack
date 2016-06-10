@@ -4,6 +4,6 @@ publish:
     repo: oas/packer-buildpack
     tag:
     - latest
-    - $$BRANCH-$$COMMIT-$$BUILD_NUMBER
+    - $$BRANCH-$${COMMIT:0:7}-$$BUILD_NUMBER
     file: Dockerfile
     insecure: true
