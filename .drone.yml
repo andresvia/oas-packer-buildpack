@@ -1,6 +1,8 @@
 publish:
   docker:
     repo: registry.192.168.12.212.xip.io:5000/oas/packer-buildpack
-    tag: latest
+    tag:
+    - latest
+    - $$BRANCH-$$COMMIT-$$BUILD_NUMBER
     file: Dockerfile
     insecure: true
