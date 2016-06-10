@@ -7,3 +7,8 @@ publish:
     - $$BRANCH-$${COMMIT:0:7}-$$BUILD_NUMBER
     file: Dockerfile
     insecure: true
+    storage_path: /drone/docker
+
+cache:
+  mount:
+  - /drone/docker
