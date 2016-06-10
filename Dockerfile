@@ -6,3 +6,4 @@ RUN unzip packer.zip
 RUN rm packer.zip
 WORKDIR /
 RUN apk add --no-cache bash
+RUN apk add --no-cache jq
