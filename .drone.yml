@@ -7,11 +7,11 @@ publish:
     - $$BRANCH-$${COMMIT:0:7}-$$BUILD_NUMBER
     file: Dockerfile
     insecure: true
-    load: .drone/docker/image.tar
+    load: drone/docker/image.tar
     save:
-      destination: .drone/docker/image.tar
+      destination: drone/docker/image.tar
       tag: latest
 
 cache:
   mount:
-  - .drone/docker/image.tar
+  - drone/docker/image.tar
