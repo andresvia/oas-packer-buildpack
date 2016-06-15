@@ -25,5 +25,5 @@ notify:
       {
         "chat_id": "-130629599",
         "parse_mode": "Markdown",
-        "text": "[{{uppercase build.status}}]({{build.link_url}}) \[{{repo.full_name}}:{{build.branch}}-{{truncate build.commit 7}}-{{build.number}}\] {{build.author}} authored \"{{truncate build.message 25}}...\" took {{duration build.started_at build.finished_at}}"
+        "text": "[{{uppercase build.status}}]({{build.link_url}}) {{repo.full_name}}:{{build.branch}}-{{truncate build.commit 7}}-{{build.number}} {{build.author}} authored \"{{truncate build.message 25}}\"... took {{duration build.started_at build.finished_at}}"
       }
