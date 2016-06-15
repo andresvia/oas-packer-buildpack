@@ -7,4 +7,3 @@ RUN cd /tmp && \
   mkdir -p /usr/local/bin && \
   mv packer /usr/local/bin && \
   rm packer.zip
-ENTRYPOINT [ "/usr/local/bin/packer", "--machine-readable" ]
