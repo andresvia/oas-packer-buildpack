@@ -1,7 +1,7 @@
 publish:
   docker:
-    registry: ci.192.168.12.212.xip.io:5000
-    repo: oas/packer-buildpack
+    registry: 192.168.12.212:5000
+    repo: plataforma/packer-buildpack
     tag:
     - latest
     - $$BRANCH-$${COMMIT:0:7}-$$BUILD_NUMBER
@@ -24,5 +24,6 @@ notify:
     template: >
       {
         "chat_id": "-130629599",
-        "text": "{{uppercase build.status}} [{{repo.full_name}}:{{build.branch}}:{{truncate build.commit 7}}:{{build.number}}] {{build.author}} authored \"{{truncate build.message 50}}\""
+        "parse_mode": "Markdown",
+        "text": "[{{uppercase build.status}}]({{build.link_url}}) [{{repo.full_name}}:{{build.branch}}-{{truncate build.commit 7}}-{{build.number}}] {{build.author}} authored \"{{truncate build.message 10}}...\" (took {{duration build.started_at build.finished_at}})"
       }
