@@ -15,3 +15,15 @@ publish:
 cache:
   mount:
   - drone/docker/image.tar
+
+notify:
+  webhook:
+    debug: true
+    urls:
+    - "https://api.telegram.org/bot$$TELEGRAM_BOT_KEY/sendMessage"
+    content_type: application/json
+    template: >
+      {
+        "chat_id": "-130629599",
+        "text": "{{repo.full_name}} $${BRANCH} $${COMMIT:0:7} $${BUILD_NUMBER} {{build.status}}"
+      }
