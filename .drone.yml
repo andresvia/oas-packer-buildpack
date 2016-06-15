@@ -4,7 +4,7 @@ publish:
     repo: plataforma/packer-buildpack
     tag:
     - latest
-    - $$BRANCH-$${COMMIT:0:7}-$$BUILD_NUMBER
+    - $${BRANCH=SNAPSHOT}-$${COMMIT:0:7=SNAPSHOT}-$${BUILD_NUMBER=SNAPSHOT}
     file: Dockerfile
     insecure: true
     load: drone/docker/image.tar
