@@ -3,18 +3,19 @@ publish:
     registry: 192.168.12.212:5000
     repo: plataforma/packer-buildpack
     tag:
-    - latest
-    - $${BRANCH=SNAPSHOT}-$${COMMIT:0:7=SNAPSHOT}-$${BUILD_NUMBER=SNAPSHOT}
+      - latest
+      - $$BRANCH-$${COMMIT:0:7}-$$BUILD_NUMBER
     file: Dockerfile
     insecure: true
-    load: drone/docker/image.tar
+    load: docker/image.tar
     save:
-      destination: drone/docker/image.tar
+      destination: docker/image.tar
       tag: latest
+    storage_driver: overlay
 
 cache:
   mount:
-  - drone/docker/image.tar
+    - docker/image.tar
 
 notify:
   webhook:
