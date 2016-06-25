@@ -1,4 +1,4 @@
-FROM 172.17.0.1:5000/plataforma/base-os:master-bf3e8b4-0
+FROM 172.17.0.1:5000/plataforma/base-os:master-c924483-0
 ENV PACKER_DOWNLOAD_URL https://releases.hashicorp.com/packer/0.10.1/packer_0.10.1_linux_amd64.zip
 ENV JQ_DOWNLOAD_URL https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
 ENV AWS_DOWNLOAD_URL https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
