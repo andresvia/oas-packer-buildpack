@@ -1,6 +1,6 @@
 publish:
   docker:
-    registry: 172.17.0.1:5000
+    registry: 10.20.0.126:5000
     repo: plataforma/packer-buildpack
     tag:
       - latest
@@ -12,15 +12,3 @@ publish:
 cache:
   mount:
     - /drone/docker
-
-notify:
-  webhook:
-    urls:
-      - https://api.telegram.org/bot$$TELEGRAM_BOT_KEY/sendMessage
-    content_type: application/json
-    template: >
-      {
-        "chat_id": "$$TELEGRAM_CHAT_ID",
-        "parse_mode": "Markdown",
-        "text": "[{{uppercase build.status}}]({{build.link_url}}) {{repo.full_name}}:{{build.branch}}-{{truncate build.commit 7}}-{{build.number}} {{build.author}} authored \"{{truncate build.message 25}}\"... took {{duration build.started_at build.finished_at}}"
-      }
