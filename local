@@ -1,5 +1,0 @@
-#!/bin/bash
-
-set -eu
-
-exec drone exec -E "${DRONE_SECRETS:-${HOME}/.drone_secrets}" --deploy --cache --notify
